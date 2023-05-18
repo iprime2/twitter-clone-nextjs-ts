@@ -5,6 +5,8 @@ import { FC, useCallback, useState } from 'react'
 import Input from '@/components/Input'
 import Modal from '../Modal'
 import useRegisterModal from '@/hooks/useRegisterModal'
+import { signIn } from 'next-auth/react'
+import { toast } from 'react-hot-toast'
 
 interface LoginModalProps {}
 
@@ -29,13 +31,21 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
     try {
       setIsLoading(true)
 
+      signIn('credentials', {
+        email,
+        password,
+      })
+
+      toast.success('Logged in')
+
       loginModal.onClose()
     } catch (error) {
       console.log(error)
+      toast.error('Something went wrong')
     } finally {
       setIsLoading(false)
     }
-  }, [loginModal])
+  }, [loginModal, email, password])
 
   const bodyContent = (
     <div className='flex flex-col gap-4'>
