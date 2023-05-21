@@ -15,7 +15,6 @@ interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = ({}) => {
   const { data: currentUser } = useCurrentUser()
-  console.log(currentUser)
   const items = [
     {
       label: 'Home',
@@ -30,7 +29,7 @@ const Sidebar: FC<SidebarProps> = ({}) => {
     },
     {
       label: 'Profile',
-      href: '/users/:id',
+      href: `/users?userId=${currentUser?.id}`,
       icon: FaUser,
       auth: true,
     },

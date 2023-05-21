@@ -1,6 +1,10 @@
 import Layout from '@/components/Layout'
 import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
+import LoginModal from '@/components/modals/LoginModal'
+import RegisterModal from '@/components/modals/RegisterModal'
+import EditModal from '@/components/modals/EditModal'
+import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +21,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
+        <EditModal />
+        <Toaster />
+        <LoginModal />
+        <RegisterModal />
+
         <Layout>{children}</Layout>
       </body>
     </html>

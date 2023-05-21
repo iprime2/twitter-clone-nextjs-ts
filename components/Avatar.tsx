@@ -19,7 +19,7 @@ const Avatar: FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
     (e: any) => {
       e.stopPropagation()
 
-      const url = `/users/${userId}`
+      const url = `/users?userId=${userId}`
 
       router.push(url)
     },

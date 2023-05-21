@@ -1,9 +1,6 @@
-import { useRouter } from 'next/navigation'
 import { BsTwitter } from 'react-icons/bs'
 
 const SidebarLogo = () => {
-  const router = useRouter()
-
   return (
     <div
       className='rounded-full

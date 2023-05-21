@@ -1,16 +1,15 @@
 import { create } from 'zustand'
 
-import { FC } from 'react'
-
-interface LoginModalStore {
+interface EditModalStore {
   isOpen: boolean
   onOpen: () => void
   onClose: () => void
 }
-const useLoginModal = create<LoginModalStore>((set) => ({
+
+const useEditModal = create<EditModalStore>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }))
 
-export default useLoginModal
+export default useEditModal

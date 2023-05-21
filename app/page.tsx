@@ -2,12 +2,12 @@
 
 import Modal from '@/components/Modal'
 import Header from '@/components/layout/Header'
-import LoginModal from '@/components/modals/LoginModal'
-import RegisterModal from '@/components/modals/RegisterModal'
-import { Toaster } from 'react-hot-toast'
+
+import { FC } from 'react'
 import { SessionProvider } from 'next-auth/react'
 import { Session } from 'next-auth'
-import { FC } from 'react'
+import Form from '@/components/Form'
+import PostFeed from '@/components/Posts/PostFeed'
 
 interface HomeProps {
   session: Session | null
@@ -15,12 +15,13 @@ interface HomeProps {
 
 const Home: FC<HomeProps> = ({ session }) => {
   return (
-    <SessionProvider session={session}>
-      <Toaster />
-      <LoginModal />
-      <RegisterModal />
-      <Header label='Home' />
-    </SessionProvider>
+    <>
+      <SessionProvider session={session}>
+        <Header label='Home' />
+        <Form placeholder='Whats Happening?' />
+        <PostFeed />
+      </SessionProvider>
+    </>
   )
 }
 
