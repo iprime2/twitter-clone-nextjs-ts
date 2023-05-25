@@ -26,6 +26,7 @@ const Sidebar: FC<SidebarProps> = ({}) => {
       href: '/notification',
       icon: BsBellFill,
       auth: true,
+      alert: currentUser?.hasNotification,
     },
     {
       label: 'Profile',
@@ -46,6 +47,7 @@ const Sidebar: FC<SidebarProps> = ({}) => {
               label={item.label}
               icon={item.icon}
               auth={item.auth}
+              alert={item.alert}
             />
           ))}
           {currentUser && (
