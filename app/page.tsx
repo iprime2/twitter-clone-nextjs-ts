@@ -4,23 +4,17 @@ import Modal from '@/components/Modal'
 import Header from '@/components/layout/Header'
 
 import { FC } from 'react'
-import { SessionProvider } from 'next-auth/react'
-import { Session } from 'next-auth'
 import Form from '@/components/Form'
 import PostFeed from '@/components/Posts/PostFeed'
 
-interface HomeProps {
-  session: Session | null
-}
+interface HomeProps {}
 
-const Home: FC<HomeProps> = ({ session }) => {
+const Home: FC<HomeProps> = () => {
   return (
     <>
-      <SessionProvider session={session}>
-        <Header label='Home' />
-        <Form placeholder='Whats Happening?' />
-        <PostFeed />
-      </SessionProvider>
+      <Header label='Home' />
+      <Form placeholder='Whats Happening?' />
+      <PostFeed userId='' />
     </>
   )
 }

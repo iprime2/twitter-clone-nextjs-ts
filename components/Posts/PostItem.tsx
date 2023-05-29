@@ -8,7 +8,7 @@ import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from 'react-icons/ai'
 import useLike from '@/hooks/useLike'
 
 interface PostItemProps {
-  userId: string
+  userId?: string
   data: Record<string, any>
 }
 

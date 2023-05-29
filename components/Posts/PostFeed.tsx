@@ -7,11 +7,11 @@ interface PostFeedProps {
 }
 
 const PostFeed: FC<PostFeedProps> = ({ userId }) => {
-  const { data: posts = [] } = usePosts(userId)
+  const { data: posts = [] } = usePosts(userId as string)
   return (
     <>
       {posts.map((post: Record<string, any>) => (
-        <PostItem userId={userId} key={post.id} data={post} />
+        <PostItem userId={userId as string} key={post.id} data={post} />
       ))}
     </>
   )
