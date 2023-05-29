@@ -38,5 +38,6 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "prisma": "^4.14.1"
-  }
+  },
+  "postinstall": "prisma generate"
 }
