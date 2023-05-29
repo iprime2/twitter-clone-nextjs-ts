@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {}
 
-module.exports = nextConfig
+const config = {
+  api: {
+    responseLimit: false,
+    // responseLimit: '8mb',
+  },
+}
+
+module.exports = { nextConfig, config }
+
