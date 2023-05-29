@@ -11,18 +11,19 @@ export default async function handler(
     return res.status(405).end()
   }
  
-
+console.log(req.body)
   try {
     if (req.method === 'POST') {
       const { currentUser } = await serverAuth(req, res)
       const { body } = req.body
-
+  console.log('hello from above')
       const post = await prisma.post.create({
         data: {
           body,
           userId: currentUser.id,
         },
       })
+        console.log('hello from below')
 
       return res.status(200).json(post)
     }
@@ -55,7 +56,7 @@ export default async function handler(
           },
         })
         
-  console.log('hello from non-id')
+
       }
       return res.status(200).json(posts)
     }
