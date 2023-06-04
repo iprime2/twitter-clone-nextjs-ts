@@ -9,7 +9,7 @@ const CommentFeed: FC<CommentFeedProps> = ({ comments = [] }) => {
   return (
     <>
       {comments.map((comment) => (
-        <CommentItem key={comment.id} data={comment} />
+        <CommentItem key={comment.id} commentId={comment.id} data={comment} />
       ))}
     </>
   )

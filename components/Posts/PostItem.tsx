@@ -26,7 +26,7 @@ const PostItem: FC<PostItemProps> = ({ userId, data }) => {
   const { hasLiked, toggleLike } = useLike({ postId: data.id, userId })
 
   const { deleteUser } = useDeletePost({
-    userId: currentUser.id,
+    userId: currentUser?.id,
   })
 
   const editPostModal = useEditPostModal()
@@ -104,14 +104,14 @@ const PostItem: FC<PostItemProps> = ({ userId, data }) => {
               </span>
               <span className='text-neutral-500 text-sm'>{createdAt}</span>
             </div>
-            <div className='ml-auto relative'>
+            <div className='relative ml-auto'>
               <BsThreeDotsVertical
                 size={20}
                 color='gray'
                 onClick={() => setOtherMenu((prev) => !prev)}
               />
               {otherMenu && (
-                <div className='absolute mt-3 mr-10 p-2 rounded-md bg-slate-400 flex flex-col'>
+                <div className='absolute mt-3 mr-20 p-2 rounded-md bg-slate-400 flex flex-col'>
                   <span
                     className='text-semibold p-2 hover:bg-slate-800 hover:text-white rounded-md'
                     onClick={editPostModal.onOpen}
