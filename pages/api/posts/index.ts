@@ -10,20 +10,18 @@ export default async function handler(
   if (req.method !== 'POST' && req.method !== 'GET') {
     return res.status(405).end()
   }
- 
-console.log(req.body)
+
   try {
     if (req.method === 'POST') {
       const { currentUser } = await serverAuth(req, res)
       const { body } = req.body
-  console.log('hello from above')
+
       const post = await prisma.post.create({
         data: {
           body,
           userId: currentUser.id,
         },
       })
-        console.log('hello from below')
 
       return res.status(200).json(post)
     }
@@ -55,8 +53,6 @@ console.log(req.body)
             createdAt: 'desc',
           },
         })
-        
-
       }
       return res.status(200).json(posts)
     }
@@ -64,10 +60,4 @@ console.log(req.body)
     console.log(error)
     return res.status(400).end()
   }
-}
-
-export const config = {
-  api: {
-    responseLimit: false,
-  },
 }

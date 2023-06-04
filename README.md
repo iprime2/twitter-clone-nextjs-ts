@@ -1,18 +1,3 @@
-################################################################################
-## Twitter Clone
-
-I have build this webapp by using Nextjs, typescript, tailwindcss and mongoDB.
-
-The major functionality of this webapp are create new account, edit user profile, follow others, post tweet, like tweets, comment on tweets.
-
-I am still working on this project where I wil be adding some new features.
-
-Please feel free to visit my webapp:
-https://twitter-clone-nextjs-ts.vercel.app
-
-################################################################################
-
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

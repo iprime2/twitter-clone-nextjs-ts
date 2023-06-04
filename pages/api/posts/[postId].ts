@@ -10,7 +10,6 @@ export default async function handler(
     return res.status(405).end()
   }
 
-  console.log('hello from id')
   try {
     const { postId } = req.query
 

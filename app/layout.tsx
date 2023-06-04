@@ -6,6 +6,7 @@ import RegisterModal from '@/components/modals/RegisterModal'
 import EditModal from '@/components/modals/EditModal'
 import { Toaster } from 'react-hot-toast'
 import Provider from '@/components/Provider'
+import EditPostModal from '@/components/modals/EditPostModal'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Toaster />
           <LoginModal />
           <RegisterModal />
+          <EditPostModal />
 
           <Layout>{children}</Layout>
         </Provider>
