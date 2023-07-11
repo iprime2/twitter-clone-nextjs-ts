@@ -1,6 +1,6 @@
 # Full Stack Twitter Clone with Next.js 13, App Router, React, Tailwind, Prisma, MongoDB and NextAuth 2023
 
-#### https://airbnb-clone-next-js-ts.vercel.app
+#### https://sushil-airbnb-clone.vercel.app
 
 ![Screenshot](demo.png)
 
